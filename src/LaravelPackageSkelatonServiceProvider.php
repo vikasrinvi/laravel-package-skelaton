@@ -5,6 +5,7 @@ namespace Vikasrinvi\LaravelPackageSkelaton;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Vikasrinvi\LaravelPackageSkelaton\Commands\LaravelPackageSkelatonCommand;
+use Vikasrinvi\LaravelPackageSkelaton\ErrorEmailNotifier;
 
 class LaravelPackageSkelatonServiceProvider extends PackageServiceProvider
 {
@@ -21,5 +22,13 @@ class LaravelPackageSkelatonServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_laravel-package-skelaton_table')
             ->hasCommand(LaravelPackageSkelatonCommand::class);
+    }
+
+    public function packageRegistered()
+    {
+        $this->app->singleton('error-email-notifier', function () {
+            return new ErrorEmailNotifier();
+        });
+
     }
 }
