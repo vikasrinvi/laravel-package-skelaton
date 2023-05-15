@@ -3,7 +3,6 @@
 namespace Vikasrinvi\LaravelPackageSkelaton;
 
 use Illuminate\Support\Facades\Mail;
-use Throwable;
 
 class ErrorEmailNotifier
 {
