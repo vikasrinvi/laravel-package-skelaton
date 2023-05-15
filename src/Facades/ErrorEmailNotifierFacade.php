@@ -1,6 +1,6 @@
 <?php
 
-namespace Your\Package\Namespace\Facades;
+namespace Vikasrinvi\LaravelPackageSkelaton\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
